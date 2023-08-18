@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <string>
 
+//определяем концепт
 template <typename T> concept ComplexConcept = requires(T value)
 {
 	{value.tostring() } -> std::same_as<std::string>;
@@ -8,7 +9,7 @@ template <typename T> concept ComplexConcept = requires(T value)
 		requires !std::has_virtual_destructor<T>::value;
 };
 
-//провкрка концепта
+//проверка концепта
 class ComplexCon {
 private:
 	short _n = 0;
